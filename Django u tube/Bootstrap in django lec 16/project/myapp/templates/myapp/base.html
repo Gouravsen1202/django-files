@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+    {% endblock title %}</title>
+    {% block myapp %}
+    <link rel="stylesheet" href="{% static 'myapp/css/styl.css' %}">
+    {% endblock myapp %}
+</head>
+<body>
+    <li>home</li>
+    <li>base</li>
+    <li>python</li>
+    <li>django</li>
+    <h1>{% block contain %}
+    
+    {% endblock contain %}</h1>
+    {% block hero %}
+    
+    {% endblock hero %}
+</body>
+</html>

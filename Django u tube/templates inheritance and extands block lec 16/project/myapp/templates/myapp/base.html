@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+<ul>
+    <li>home</li>
+    <li>django</li>
+    <li>this is a extends file</li>
+    
+</ul>
+
+  <h1>Welcome to My Website</h1>
+  <p>This is a basic PYTHON page.</p>
+  {% block hero %}{% endblock hero %}
+  {% block conten %}{% endblock conten %}
+</body>
+</html>
+{% comment %} ab isko home.html me inherit karenge {% endcomment %}
