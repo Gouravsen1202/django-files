@@ -1,0 +1,101 @@
+{% extends "myapp/common.html" %}
+
+{% block title %}
+Dashboard - Property Bazar
+{% endblock %}
+
+{% block content %}
+<style>
+  .sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+
+  .sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: white !important;
+    border-radius: 5px;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #0d6efd;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 bg-light sidebar p-3">
+      <div class="text-center mb-4">
+        <img src="{{ usardata.profile_url|default:'/static/images/default-user.png' }}" alt="Profile" class="profile-img">
+        <h5 class="mt-2">{{ usardata.emp_name }}</h5>
+        <p class="text-muted small">{{ usardata.emp_email }}</p>
+      </div>
+
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><i class="bi bi-house-door"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-building"></i> My Properties</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-plus-circle"></i> Add New Property</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a>
+        </li>
+        <li class="nav-item mt-2">
+          <a class="nav-link text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 p-4">
+      <h2 class="mb-4">Welcome, {{userdata.emp_name}} 👋</h2>
+
+      <div class="row g-4">
+        <!-- Stats Cards -->
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h6>Total Listings</h6>
+            <h3>24</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h6>Pending Approvals</h6>
+            <h3>3</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h6>Visitors Today</h6>
+            <h3>154</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4 p-4">
+        <h5>Latest Activity</h5>
+        <ul class="list-group list-group-flush mt-3">
+          <li class="list-group-item">New property "Green Residency" added.</li>
+          <li class="list-group-item">You updated your profile picture.</li>
+          <li class="list-group-item">3 users viewed your "Sky Villa" listing today.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons (optional) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+{% endblock %}
