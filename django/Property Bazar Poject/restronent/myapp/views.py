@@ -4,24 +4,31 @@ from .models import Bazzar
 # Create your views here.
 def home(request):
     return render(request,'myapp/home.html')
+def home1(request):
+    return render(request,'myapp/home.html')
 
 
 def common(request):
     return render(request,'myapp/common.html')
 
-def reservetable(request):
-    return render(request,'myapp/reservetable.html')
 
-def menu(request):
+def menu(request):#selling
+    return render(request,'myapp/selling.html')
+def menu1(request):
     return render(request,'myapp/selling.html')
 
-def order(request):
+def order(request):#purchase
+    return render(request,'myapp/purchase.html')
+def order1(request):
     return render(request,'myapp/purchase.html')
 
 def deshbord(request):
     return render(request,'myapp/desbord.html')
 
 def trackorder(request):
+    return render(request,'myapp/track.html')
+
+def trackorder1(request):
     return render(request,'myapp/track.html')
 
 # for login data 
