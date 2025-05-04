@@ -126,11 +126,54 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        {% if userdata%}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'home' %}">
+              <a class="nav-link active" href="{% url 'home1' pk=userdata.id %} ">
+                <i class="fas fa-home"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'menu1' pk=userdata.id %}">
+                <i class="fas fa-sign"></i> Selling
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'order1' pk=userdata.id %}">
+                <i class="fas fa-cart-shopping"></i> Purchase
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'track order1' pk=userdata.id %}">
+                <i class="fas fa-map-marker-alt"></i> Track
+              </a>
+            
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Service1' pk=userdata.id %}">
+                <i class="fas fa-house-user"></i> Service
+                 
+              </a>
+            
+            </li>
+          </ul>
+
+          <!-- Right side login/register -->
+          <form class="d-flex">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'deshbord' %}">{{ userdata.emp_name }}</a>
+              </li>
+          
+          </form>
+        </div>
+        {% else %}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'home' %} ">
                 <i class="fas fa-home"></i> Home
               </a>
             </li>
@@ -148,10 +191,16 @@
               <a class="nav-link" href="{% url 'track order' %}">
                 <i class="fas fa-map-marker-alt"></i> Track
               </a>
+            
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Service' %}">
+                <i class="fas fa-map-marker-alt"></i> Service
+              </a>
+            
             </li>
           </ul>
 
-          <!-- Right side login/register -->
           <ul class="navbar-nav auth-links mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="{% url 'Ragister' %}">
@@ -165,6 +214,7 @@
             </li>
           </ul>
         </div>
+        {% endif %}
       </div>
     </nav>
 
