@@ -51,7 +51,7 @@ def ragister(request):
                 msg = "Registration successful"
                 return render(request, 'myapp/login.html', {'msg': msg})
             else:
-                msg = "Password and Confirm Password do not match"
+                msg = "Password and Confirm Password does not match"
                 userdata = {
                     'username': name,
                     'email': email,
