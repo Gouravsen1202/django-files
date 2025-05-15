@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Bazzar
 
-# Create your views here.
+# Create your views here..
 def home(request):
     return render(request,'myapp/home.html')
 
